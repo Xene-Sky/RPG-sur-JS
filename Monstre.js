@@ -1,27 +1,25 @@
-var PVM = 7
-var EM = 7
-var FM = 5
+class monstre {
+	constructor() {
+		this.nom = listeMonstre[hasard(1,22)];
+		this.force = 5 + monsterLvl;
+		this.endurance = 7 + monsterLvl;
+		this.pv = this.endurance;
+	}
+}
+
+var listeMonstre = ["Slime", "Gobelin","Squelette","Armure_Maudite","Hogobelin","Ogre","Troll","Lamia","Succube","Lord","Dalek","Sith","Joker","Thanos","Magicarpe","Bowser","Bowsette","Sauron","Rick","Gozilla","King_Kong","Ganon"];
+
+var monsterLvl = 0;
 
 function hasard(Min,Max) { 
     return (Math.floor((Max-Min)*Math.random())+Min); 
 } 
 
-function nomMonstre(){
-	var lesMonstres = ["Slime", "Gobelin","Squelette","Armure Maudite","Hogobelin","Ogre","Troll","Lamia","Succube","Lord","Dalek","Sith","Joker","Thanos","Magicarpe","Bowser","Bowsette","Sauron","Rick","Gozilla","King Kong","Ganon","Voledemort","Bill Cipher","Salem","Noob Sparadra","Compute-Un Pensée profonde","Eggman","Ridley"];
-	return lesMonstres[hasard(0,29)];
-}
 function boutton(){
-	var monstre = nomMonstre();
-	console.log(monstre);
-	document.getElementById("enemie").innerHTML = "Un " + monstre + "  sauvage apparait ";
-	document.getElementById("enemie2").innerHTML = monstre+ " a " + PVM + " Point de vie";
-	document.getElementById("enemie3").innerHTML = monstre + " a " + EM + " d endurence";
-	document.getElementById("enemie4").innerHTML = monstre + " a " + FM + " de Force";
-	monstreUp()
-}
-function monstreUp(){
-	FM = FM + 1
-	EM = EM + 1
-	PVM = EM
-
+	var monster = new monstre;
+	monsterLvl++;
+	document.getElementById("enemie").innerHTML = "Un " + monster.nom + "  sauvage apparait ";
+	document.getElementById("enemie").innerHTML += "<br>" +monster.nom+ " a " + monster.pv + " Point de vie";
+	document.getElementById("enemie").innerHTML += "<br>" + monster.nom + " a " + monster.endurance + " d endurence";
+	document.getElementById("enemie").innerHTML += "<br>" + monster.nom + " a " + monster.force + " de Force";
 }
