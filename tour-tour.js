@@ -13,6 +13,7 @@ var inventaire = {
 	potionAgi : 0,
 	potionEndu : 0,
 	potionSoinMineur : 1,
+	randomPot : 10,
 	potionSoinMajeur : 0
 } ;
 
@@ -83,6 +84,7 @@ function taper(){
 	string += "<br>Vie Joueur => " + monPerso.vieJoueur;
 	string += "<br> Vie Monstre =>" + vieMonstre;
 	document.getElementById("taper").innerHTML = string;
+	
 }
 
 function persoMort(){
