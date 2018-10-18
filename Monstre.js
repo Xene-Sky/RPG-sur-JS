@@ -18,8 +18,8 @@ function hasard(Min,Max) {
 function boutton(){
 	var monster = new monstre;
 	monsterLvl++;
-	document.getElementById("enemie").innerHTML = "Un " + monster.nom + "  sauvage apparait ";
-	document.getElementById("enemie").innerHTML += "<br>" +monster.nom+ " a " + monster.pv + " Point de vie";
-	document.getElementById("enemie").innerHTML += "<br>" + monster.nom + " a " + monster.endurance + " d endurence";
-	document.getElementById("enemie").innerHTML += "<br>" + monster.nom + " a " + monster.force + " de Force";
+	document.getElementById("ennemi").innerHTML = "Un " + monster.nom + "  sauvage apparait ";
+	document.getElementById("ennemi").innerHTML += "<br>" +monster.nom+ " a " + monster.pv + " Point de vie";
+	document.getElementById("ennemi").innerHTML += "<br>" + monster.nom + " a " + monster.endurance + " d endurence";
+	document.getElementById("ennemi").innerHTML += "<br>" + monster.nom + " a " + monster.force + " de Force";
 }
