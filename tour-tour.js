@@ -16,7 +16,7 @@ var inventaire = {
 	potionSoinMajeur : 0
 } ;
 
-var gold;
+var gold = 0;
 //var vieJ1 = vieJoueur - degatE;
 
 
@@ -59,7 +59,7 @@ function taper(){
 		if(vieMonstre <= 0){
 			string += "<br>Vous avez tuer le monstre !";
 			document.getElementById("taper2").disabled = true;
-			monstreMort()
+			monstreMort();
 		} else{
 			monPerso.vieJoueur -= degatE;
 			string += "<br>Le monstre riposte ! Il inflige " + degatE + " points de dégats !";
@@ -76,7 +76,7 @@ function taper(){
 			if(vieMonstre <= 0){
 				string += "<br>Vous avez tuer le monstre !";
 				document.getElementById("taper2").disabled = true;
-				monstreMort()
+				monstreMort();
 			}
 		}
 	}
