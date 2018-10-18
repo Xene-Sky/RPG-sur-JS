@@ -6,8 +6,7 @@ var monPerso = {
 	vieJoueur : 100
 } ;
 
-var vieMonstre = 50;
-var degatJ = 10; 
+var vieMonstre = 50; 
 var degatE = 5;
 var inventaire = {
 	potionForce  : 0,
@@ -22,9 +21,8 @@ var gold;
 
 
 function taper(){
-	
 
-		if( monPerso.vieJoueur != 0 && monPerso.vieMonstre != 0  ){
+	/*	if( monPerso.vieJoueur != 0 && monPerso.vieMonstre != 0  ){
 			if(hasard(1,100) <= monPerso.agilite ){
 			 monPerso.vieJoueur -= degatE;
 			 vieMonstre -= monPerso.force;
@@ -53,11 +51,36 @@ function taper(){
 				}
 
 			} 
-				
-			
-
-			
+				*/
+	var string = "";
+	if(hasard(0,100) <= monPerso.agilite){
+		string += "vous avez l'initiative ! vous infligez " + monPerso.force + " de dégats !";
+		vieMonstre -= monPerso.force;
+		if(vieMonstre <= 0){
+			string += "<br>Vous avez tuer le monstre !";
+			document.getElementById("taper2").disabled = true;
+		} else{
+			monPerso.vieJoueur -= degatE;
+			string += "<br>Le monstre riposte ! Il inflige " + degatE + " points de dégats !";
 		}
+	} else{
+		monPerso.vieJoueur -= degatE;
+		string += "<br>Le monstre a l'initiative ! Il inflige " + degatE + " points de dégats !";
+		if(monPerso.vieJoueur <= 0){
+			string += "<br>Vous êtes mort !";
+			document.getElementById("taper2").disabled = true;
+		} else{
+			vieMonstre -= monPerso.force;
+			string += "<br>Vous ripostez et vous infligez " + monPerso.force + " points de dégats !";
+			if(vieMonstre <= 0){
+				string += "<br>Vous avez tuer le monstre !";
+				document.getElementById("taper2").disabled = true;
+			}
+		}
+	}
+	string += "<br>Vie Joueur => " + monPerso.vieJoueur;
+	string += "<br> Vie Monstre =>" + vieMonstre;
+	document.getElementById("taper").innerHTML = string;
 }
 
 function soinPoMin(){
