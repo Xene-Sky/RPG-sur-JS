@@ -59,6 +59,7 @@ function taper(){
 		if(vieMonstre <= 0){
 			string += "<br>Vous avez tuer le monstre !";
 			document.getElementById("taper2").disabled = true;
+			monstreMort()
 		} else{
 			monPerso.vieJoueur -= degatE;
 			string += "<br>Le monstre riposte ! Il inflige " + degatE + " points de dégats !";
@@ -67,7 +68,7 @@ function taper(){
 		monPerso.vieJoueur -= degatE;
 		string += "<br>Le monstre a l'initiative ! Il inflige " + degatE + " points de dégats !";
 		if(monPerso.vieJoueur <= 0){
-			string += "<br>Vous êtes mort !";
+			persoMort();
 			document.getElementById("taper2").disabled = true;
 		} else{
 			vieMonstre -= monPerso.force;
@@ -75,12 +76,29 @@ function taper(){
 			if(vieMonstre <= 0){
 				string += "<br>Vous avez tuer le monstre !";
 				document.getElementById("taper2").disabled = true;
+				monstreMort()
 			}
 		}
 	}
 	string += "<br>Vie Joueur => " + monPerso.vieJoueur;
 	string += "<br> Vie Monstre =>" + vieMonstre;
 	document.getElementById("taper").innerHTML = string;
+}
+
+function persoMort(){
+    document.getElementById("taper").innerHTML = "You Died";
+
+}
+
+
+function monstreMort(){
+	gold = gold + 3;
+    document.getElementById("taper").innerHTML ="<br>tu as " + gold + " gold";
+    if(hasard(1,100)<=inventaire.randomPot){
+    inventaire.potionSoinMineur++;
+    document.getElementById("taper").innerHTML +="<br>tu as " + inventaire.potionSoinMineur + " potions";
+    }
+	
 }
 
 function soinPoMin(){
