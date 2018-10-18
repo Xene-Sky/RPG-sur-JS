@@ -7,8 +7,8 @@ function hasard(Min,Max) {
 } 
 
 function nomMonstre(){
-	var lesMonstres = ["Slime", "Gobelin","Squelette","Armure_Maudite","Hogobelin","Ogre","Troll","Lamia","Succube","Lord","Dalek","Sith","Joker","Thanos","Magicarpe","Bowser","Bowsette","Sauron","Rick","Gozilla","King_Kong","Ganon"];
-	return lesMonstres[hasard(0,22)];
+	var lesMonstres = ["Slime", "Gobelin","Squelette","Armure Maudite","Hogobelin","Ogre","Troll","Lamia","Succube","Lord","Dalek","Sith","Joker","Thanos","Magicarpe","Bowser","Bowsette","Sauron","Rick","Gozilla","King Kong","Ganon","Voledemort","Bill Cipher","Salem","Noob Sparadra","Compute-Un Pensée profonde","Eggman","Ridley"];
+	return lesMonstres[hasard(0,29)];
 }
 function boutton(){
 	var monstre = nomMonstre();
