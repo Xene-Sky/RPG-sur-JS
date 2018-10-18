@@ -1,4 +1,4 @@
-var PVM = 70
+var PVM = 7
 var EM = 7
 var FM = 5
 
@@ -10,11 +10,9 @@ function nomMonstre(){
 	var lesMonstres = ["Slime", "Gobelin","Squelette","Armure_Maudite","Hogobelin","Ogre","Troll","Lamia","Succube","Lord","Dalek","Sith","Joker","Thanos","Magicarpe","Bowser","Bowsette","Sauron","Rick","Gozilla","King_Kong"];
 	return lesMonstres[hasard(0,21)];
 }
-console.log(nomMonstre());
-
 function boutton(){
 	var monstre = nomMonstre();
-	console.log(nomMonstre());
+	console.log(monstre);
 	document.getElementById("enemie").innerHTML = monstre + " est arriver ";
 	document.getElementById("enemie2").innerHTML = monstre+ " a " + PVM + " Point de vie";
 	document.getElementById("enemie3").innerHTML = monstre + " a " + EM + " d endurence";
@@ -24,6 +22,6 @@ function boutton(){
 function monstreUp(){
 	FM = FM + 1
 	EM = EM + 1
-	PVM = EM * 10
+	PVM = EM
 
 }
