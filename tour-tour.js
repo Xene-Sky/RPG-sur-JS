@@ -23,24 +23,38 @@ function taper(){
 	
 
 		if( monPerso.vieJoueur != 0 && monPerso.vieMonstre != 0  ){
-			if(hasard(1,100) > monPerso.agilite ){
-			 //console.log("tu tapes en premier et tu enleves  " + degatE + " points de vie");
+			if(hasard(1,100) <= monPerso.agilite ){
 			 monPerso.vieJoueur -= degatE;
 			 vieMonstre -= monPerso.force;
-			document.getElementById("taper").innerHTML += "<br>le monstre tape  et t enleve  " + degatE + " points de vie   " ;
-			 document.getElementById("taper").innerHTML +="<br>il a " + vieMonstre +"pv";
-			 document.getElementById("taper").innerHTML = "tu tapes en premier et tu enleves  " + monPerso.force + " points de vie";
-			 document.getElementById("taper").innerHTML +="<br>tu as " + monPerso.vieJoueur + "pv" ;
+
+			 document.getElementById("taper").innerHTML = "tu tapes en premier et tu enleves  " + monPerso.force + " points de vie" + "<br> et il t enleve" + degatE ;
+			 document.getElementById("taper").innerHTML +="<br>tu as " + monPerso.vieJoueur + "pv" + "<br>il a " + vieMonstre +"pv <br>" ;
+			 if(vieMonstre == 0 ){
+				document.getElementById("taper").innerHTML +="<br>le mechant est mort tu as gagne ";
+				document.getElementById("rez").disabled = true;}
+				else if(monPerso.vieJoueur == 0 ){
+					document.getElementById("taper").innerHTML +="<br>You Are Dead";
+				}
 			}
+			
+			else if(hasard(1,100) >= monPerso.agilite ){
+				monPerso.vieJoueur -= degatE;
+				vieMonstre -= monPerso.force;
+				 
+				document.getElementById("taper").innerHTML = "le monstre tape en premier et t enleve  " + degatE + " points de vie   " + "<br>tu enleves  " + monPerso.force + " points de vie" ;
+				document.getElementById("taper").innerHTML +="<br>il a " + vieMonstre +"pv" + "<br>tu as " + monPerso.vieJoueur + "pv <br>";
+				if(vieMonstre == 0 ){
+					document.getElementById("taper").innerHTML +="<br>le mechant est mort tu as gagne ";
+					document.getElementById("rez").disabled = true;}
+				else if(monPerso.vieJoueur == 0 ){
+					document.getElementById("taper").innerHTML +="<br>You Are Dead";
+				}
+
+			} 
+				
 			
 
 			
-		}if(vieMonstre == 0 ){
-			document.getElementById("taper").innerHTML +="<br>le mechant est mort tu as gagne ";
-			document.getElementById("rez").disabled = true;
-			//document.getElementById("rez").disabled = false;
-		}else if(monPerso.vieJoueur == 0 ){
-			document.getElementById("taper").innerHTML +="<br>You Are Dead";
 		}
 }
 
