@@ -62,7 +62,7 @@ function soinPoMin(){
 	if (monPerso.vieJoueur <= monPerso.endurance && inventaire.potionSoinMineur >= 1){
 		monPerso.vieJoueur = monPerso.vieJoueur + 10;
 		inventaire.potionSoinMineur--;
-		document.getElementById("taper").innerHTML = "<br> tu te soignes";
+		document.getElementById("taper").innerHTML = "<br> tu te soignes, tu as " + monPerso.vieJoueur + "hp";
 		if (monPerso.vieJoueur > monPerso.endurance){
 			monPerso.vieJoueur == monPerso.endurance;
 
