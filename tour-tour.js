@@ -16,6 +16,8 @@ var inventaire = {
 	potionSoinMineur : 1,
 	potionSoinMajeur : 0
 } ;
+
+var gold;
 //var vieJ1 = vieJoueur - degatE;
 
 
@@ -31,7 +33,7 @@ function taper(){
 			 document.getElementById("taper").innerHTML +="<br>tu as " + monPerso.vieJoueur + "pv" + "<br>il a " + vieMonstre +"pv <br>" ;
 			 if(vieMonstre == 0 ){
 				document.getElementById("taper").innerHTML +="<br>le mechant est mort tu as gagne ";
-				document.getElementById("rez").disabled = true;}
+				document.getElementById("tpaer2").disabled = true;}
 				else if(monPerso.vieJoueur == 0 ){
 					document.getElementById("taper").innerHTML +="<br>You Are Dead";
 				}
@@ -45,7 +47,7 @@ function taper(){
 				document.getElementById("taper").innerHTML +="<br>il a " + vieMonstre +"pv" + "<br>tu as " + monPerso.vieJoueur + "pv <br>";
 				if(vieMonstre == 0 ){
 					document.getElementById("taper").innerHTML +="<br>le mechant est mort tu as gagne ";
-					document.getElementById("rez").disabled = true;}
+					document.getElementById("taper2").disabled = true;}
 				else if(monPerso.vieJoueur == 0 ){
 					document.getElementById("taper").innerHTML +="<br>You Are Dead";
 				}
