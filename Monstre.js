@@ -7,13 +7,13 @@ function hasard(Min,Max) {
 } 
 
 function nomMonstre(){
-	var lesMonstres = ["Slime", "Gobelin","Squelette","Armure_Maudite","Hogobelin","Ogre","Troll","Lamia","Succube","Lord","Dalek","Sith","Joker","Thanos","Magicarpe","Bowser","Bowsette","Sauron","Rick","Gozilla","King_Kong"];
-	return lesMonstres[hasard(0,21)];
+	var lesMonstres = ["Slime", "Gobelin","Squelette","Armure_Maudite","Hogobelin","Ogre","Troll","Lamia","Succube","Lord","Dalek","Sith","Joker","Thanos","Magicarpe","Bowser","Bowsette","Sauron","Rick","Gozilla","King_Kong","Ganon"];
+	return lesMonstres[hasard(0,22)];
 }
 function boutton(){
 	var monstre = nomMonstre();
 	console.log(monstre);
-	document.getElementById("enemie").innerHTML = monstre + " est arriver ";
+	document.getElementById("enemie").innerHTML = "Un " + monstre + "  sauvage apparait ";
 	document.getElementById("enemie2").innerHTML = monstre+ " a " + PVM + " Point de vie";
 	document.getElementById("enemie3").innerHTML = monstre + " a " + EM + " d endurence";
 	document.getElementById("enemie4").innerHTML = monstre + " a " + FM + " de Force";
