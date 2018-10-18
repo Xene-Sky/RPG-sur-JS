@@ -27,7 +27,7 @@ function taper(){
 			 monPerso.vieJoueur -= degatE;
 			 vieMonstre -= monPerso.force;
 
-			 document.getElementById("taper").innerHTML = "tu tapes en premier et tu enleves  " + monPerso.force + " points de vie" + "<br> et il t enleve" + degatE ;
+			 document.getElementById("taper").innerHTML = "tu tapes en premier et tu enleves  " + monPerso.force + " pv" + "<br> et il t enleve" + degatE + "pv" ;
 			 document.getElementById("taper").innerHTML +="<br>tu as " + monPerso.vieJoueur + "pv" + "<br>il a " + vieMonstre +"pv <br>" ;
 			 if(vieMonstre == 0 ){
 				document.getElementById("taper").innerHTML +="<br>le mechant est mort tu as gagne ";
@@ -41,7 +41,7 @@ function taper(){
 				monPerso.vieJoueur -= degatE;
 				vieMonstre -= monPerso.force;
 				 
-				document.getElementById("taper").innerHTML = "le monstre tape en premier et t enleve  " + degatE + " points de vie   " + "<br>tu enleves  " + monPerso.force + " points de vie" ;
+				document.getElementById("taper").innerHTML = "le monstre tape en premier et t enleve  " + degatE + " pv   " + "<br>tu enleves  " + monPerso.force + " pv" ;
 				document.getElementById("taper").innerHTML +="<br>il a " + vieMonstre +"pv" + "<br>tu as " + monPerso.vieJoueur + "pv <br>";
 				if(vieMonstre == 0 ){
 					document.getElementById("taper").innerHTML +="<br>le mechant est mort tu as gagne ";
