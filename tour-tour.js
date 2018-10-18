@@ -126,4 +126,3 @@ function soinPoMin(){
 function hasard(Min,Max) { 
     return (Math.floor((Max-Min)*Math.random())+Min); 
 } 
-
