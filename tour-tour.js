@@ -226,7 +226,6 @@ function genMonster(){
 	mainAffiche.innerHTML += "<br>" + monMonstre.nom + " a " + monMonstre.endurance + " d endurence";
 	mainAffiche.innerHTML += "<br>" + monMonstre.nom + " a " + monMonstre.force + " de Force";	
 	taperButton.disabled = false;
-	//document.getElementById("heal").disabled = false;
 	lance.disabled = true;
 	forcePot.disabled = true;
 	agiPot.disabled = true;
