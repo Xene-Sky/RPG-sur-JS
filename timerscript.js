@@ -29,3 +29,12 @@ function timer(){
 	}
 }
 
+var time;
+var day = true;
+
+function timer(){
+	var time = setInterval(function(){
+		day = !day;
+	},45000)
+}
+
