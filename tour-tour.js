@@ -155,7 +155,7 @@ function enterShop()
 {
 	var string = "<br>";
 	var argList = ["heal","endu","force","agi","no"];
-	string += "tes caracteristiques : <br>" + "<br>Ta force : " + monPerso.force + "<br>Ton endurance : "+monPerso.endurance + "<br> Ton agilite : "+ monPerso.agilite + "<br> Ta vie : " +monPerso.vie "<br>" ;
+	string += "tes caracteristiques : <br>" + "<br>Ta force : " + monPerso.force + "<br>Ton endurance : "+monPerso.endurance + "<br> Ton agilite : "+ monPerso.agilite + "<br> Ta vie : " +monPerso.vie + "<br>" ;
 	var itemList = ["Potion de soin","Potion d'endurance","Potion de force","Potion d'agilité","Aller à l'inventaire"];
 	for(var i = 0; i < itemList.length; i++){
 		string += "<button onclick='buyItem(\"" + argList[i] + "\")'>" + itemList[i] + "</button>";
