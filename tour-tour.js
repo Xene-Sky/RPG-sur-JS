@@ -1,7 +1,7 @@
 const aventure = document.getElementById("launch");
 const taperButton = document.getElementById("taper");
 const shopButton = document.getElementById("shopButton");
-const inventaireButton = document.getElementById("inventaireButton");
+//const inventaireButton = document.getElementById("inventaireButton");
 const forcePot = document.getElementById("forcePot");
 const agiPot = document.getElementById("agiPot");
 const enduPot = document.getElementById("enduPot");
@@ -38,11 +38,11 @@ var listeMonstre = ["Slime", "Gobelin","Squelette","Armure_Maudite","Hogobelin",
 var monsterLvl = 0;
 var pseudo;
 const randomPot = 10;
-var time;
 var day = true;
+var time;
 
 function timer(){
-	setInterval(function(){
+	time = setInterval(function(){
 		day = !day;
 		dayTime.innerHTML = (day?"Il fait jour, les monstres se calment un peu de nouveau":"Il fait nuit, les monstres sont plus puissants !");
 		if(day)
@@ -57,7 +57,13 @@ function start(){
 	do{
 		pseudo = prompt("Veuillez entrer votre Pseudo : ");
 	}while(pseudo == "" || pseudo == undefined);
-	timer();
+	if(time === undefined){
+		timer();
+		dayTime.innerHTML = "Il fait jour";
+	}else{
+		clearInterval(time);
+		timer();
+	}
 	inventaire.potionForce = 0;
 	inventaire.potionAgi = 0;
 	inventaire.potionEndu = 0;
@@ -69,6 +75,15 @@ function start(){
 	monPerso.endurance = 100;
 	monPerso.vie = 100;
 	monsterLvl = 0;
+	aventure.disabled = false;
+	taperButton.disabled = true;
+	shopButton.disabled = true;
+	forcePot.disabled = true;
+	agiPot.disabled = true;
+	enduPot.disabled = true;
+	healPotMax.disabled = true;
+	healPotMin.disabled = true;
+
 }
 
 function taper(){
@@ -209,7 +224,7 @@ function getinventaire(){
 	enduPot.disabled = false;
 	healPotMax.disabled = false;
 	healPotMin.disabled = false;
-	inventaireButton.disabled = true;
+	//inventaireButton.disabled = true;
 }
 
 function hasard(Min,Max) { 
